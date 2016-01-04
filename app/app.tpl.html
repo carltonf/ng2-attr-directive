@@ -1,0 +1,16 @@
+<h1>My First Attribute Directive</h1>
+<div>
+  <label *ngFor="#someColor of ['green', 'yellow', 'cyan']">
+    <input value={{someColor}} type="radio" name="colors"
+           (click)="color=someColor"
+           [checked]="color===someColor">
+    {{someColor | capitalize }}
+  </label>
+
+  <br>
+  <!-- todo add ngControl to validate colors -->
+  <input type="text" placeholder="color name..."
+         [(ngModel)]="color" > Custom Color
+</div>
+<hr>
+<span [myHighlight]="color" [defaultColor]="'green'">Highlight me!</span>
